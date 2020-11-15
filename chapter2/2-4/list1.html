@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-<title> JavaScript本格入門</title>
+  <title> JavaScript本格入門</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -13,7 +13,6 @@ var x = 3;
 var y = x++;
 console.log(x); //3
 console.log(y); //4
-
 var x = 3;
 var y = ++x
 console.log(x); //4
@@ -30,7 +29,6 @@ var x = 1;
 var y = x;
 x = 2;
 console.log(y); //1
-
 var data1 = [0,1,2];
 var data2 = data1;
 data1[0] = 5;
@@ -87,6 +85,52 @@ console.log('1' === 1); //false
 //2-29 condition
 var x = 100
 console.log((x >= 80) ? '合格' : '不合格'); //合格
+
+//2-30 logical
+var x6 = 1;
+var y6 = 2;
+console.log(x6 === 1 && y6 === 1); //false
+console.log(x6 === 1 || y6 === 1); //true
+
+//2-31 logical2
+var a = 1;
+if (a === 1) { console.log('こんにちは'); }
+a ===1 && console.log('こんにちは');
+
+//2-32 shortcut
+var msg1 = '';
+msg1 = msg1 || 'こんにちは';
+console.log(msg1); //こんにちは
+
+
+//2-33 delete
+var ary = ['JavaScript', 'Ajax', 'ASP.NET'];
+console.log(delete ary[0]); //tuew
+console.log(ary); //[empty, "Ajax", "ASP.NET"]
+var obj01 = {x:1, y:2};
+console.log(delete obj01.x); //tue
+console.log(obj01.x); //undefind
+var obj02 = {x:obj01, y:2};
+console.log(delete obj02.x); //true
+console.log(obj01); //{y: 2}
+var data01 = 1;
+console.log(delete data01); //false
+console.log(data01); //1
+data02 = 10;
+
+//2-34 tyoeof
+var numb = 1;
+console.log(typeof numb);
+var stri = 'こんにちは' ;
+console.log(typeof stri);
+var flag = true;
+console.log(typeof flag);
+var aryy = ['JavaScript', 'Ajax', 'ASP.NET'];
+console.log(typeof aryr);
+var objc = {x8:1, y9:2};
+console.log(typeof objc);
+
+
 
 </script>
 <noscript>jabvaが利用できません</noscript>
