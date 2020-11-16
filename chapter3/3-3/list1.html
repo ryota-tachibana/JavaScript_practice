@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript本格入門</title>
+</head>
+<body>
+<script type="text/javascript">
+window.alert('書籍による練習です。');
+
+//オブジェクト
+//3-16 aryya
+var ary1 = ['Sato', 'Takae', 'Osada', 'Hio', 'Saitoh','Sato'];
+var ary2 = ['Yabuki', 'Aoki', 'Moriyama', 'Yamada'];
+console.log(ary1.length);
+console.log(Array.isArray(ary1));
+console.log(ary1.toString());
+console.log(ary1.indexOf('Sato'));
+console.log(ary1.lastIndexOf('Sato'));
+console.log(ary1.concat(ary2));
+console.log(ary1.join('/'));
+console.log(ary1.slice(1));
+console.log(ary1.slice(1, 2));
+console.log(ary1.splice(1, 2, 'Kakeya', 'Yamaguchi'));
+console.log(ary1);
+console.log(Array.of(20, 40,60));
+console.log(ary1.copyWithin(1, 3, 5));
+console.log(ary2.fill('Suzuki', 1, 3));
+console.log(ary1.pop());
+console.log(ary1.push('Kondo'));
+console.log(ary1.shift());
+console.log(ary1.unshift('Ozawa', 'Kuge'));
+console.log(ary1.reverse());
+console.log(ary1.sort());
+
+//3-17 aryya_stack
+var data = [];
+data.push(1);
+data.push(2);
+data.push(3);
+console.log(data.pop());
+console.log(data.pop());
+console.log(data.pop());
+
+//3-18 aryya_queuq
+var data = [];
+data.push(1);
+data.push(2);
+data.push(3);
+console.log(data.shift());
+console.log(data.shift());
+console.log(data.shift());
+
+//3-19 aryya_splice
+var data = ['Sato', 'Takae', 'Osada', 'Hio', 'Saitoh'];
+console.log(data.splice(3, 2, 'Yamada', 'Suziki'));
+console.log(data.splice(3, 2));
+console.log(data.splice(1, 0, 'Tanaka'));
+
+//3-20 callback_foreach
+var data = [2, 3, 4, 5];
+data.forEach(function(value, index, array) {
+  console.log(value * value);
+});
+
+//3-21 callback_map
+var data = [2, 3, 4, 5];
+var result = data.map(function(value, index, array) {
+  return value * value;
+});
+console.log(result);
+
+//3-22 callback_some
+var data = [4, 9, 16, 25];
+var result = data.some(function(value, index, array) {
+  return value % 3 === 0;
+});
+if (result) {
+  console.log('3の倍数あり');
+} else {
+  console.log('3の倍数なし');
+}
+
+//3-23 callback_filter
+var data = [4, 9, 16, 25];
+var result = data.filter(function(value, index, array) {
+  return value % 2 === 1;
+});
+console.log(result);
+
+//3-24 sort
+var ary = [5, 25, 10];
+console.log(ary.sort());
+console.log(ary.sort(function(x, y) {
+  return x - y;
+}));
+
+//3-25 sort_clazz
+var classes = ['部長', '課長', '主任', '担当'];
+var members = [
+  { name: '鈴木清子', clazz: '主任' },
+  { name: '山口久雄', clazz: '部長' },
+  { name: '井上太郎', clazz: '担当' },
+  { name: '和田知美', clazz: '課長' },
+  { name: '小森雄太', clazz: '担当' },
+];
+console.log(members.sort(function(x, y) {
+  return classes.indexOf(x.clazz) - classes.indexOf(y.clazz);
+}))
+
+//3-26 map
+let m = new Map();
+m.set('dog', 'ワンワン');
+m.set('cat', 'ニャー');
+m.set('mouse', 'チュー');
+console.log(m.size);
+console.log(m.get('dog'));
+console.log(m.has('cat'));
+for (let key of m.keys()) {
+  console.log(key);
+}
+for (let value of m.values()) {
+  console.log(value);
+}
+for (let [key, value] of m ) {
+  console.log(value);
+}
+m.delete('dog');
+console.log(m.size);
+m.clear();
+console.log(m.size);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<noscript>jabvaが利用できません</noscript>
+</body>
+</html>
