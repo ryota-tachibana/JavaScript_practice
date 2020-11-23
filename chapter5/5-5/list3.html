@@ -9,6 +9,56 @@
 window.alert('書籍による練習です。');
 //オブジェクト指向構文
 //5-46 iterator
+let data_ary = ['one', 'tow', 'three'];
+let data_str = ['アイウエオ'];
+let data_map = new Map([['MON', '月曜'], ['TUE', '火曜'], ['WED', '水曜']]);
+for (let d of data_ary) {
+  console.log(d);
+}
+for (let d of data_str) {
+  console.log(d);
+}
+for (let[key, value] of data_map) {
+  console.log(`${key}:${value}`);
+}
+
+//5-47 iterator_array
+let data_ary1 = ['one', 'two', 'three'];
+let itr = data_ary1[Symbol.iterator]();
+let d;
+while(d = itr.next()) {
+  if (d.done) {break;}
+  console.log(d.done);
+  console.log(d.value);
+}
+
+//5-48 iterator_my
+class MI {
+  constructor(data) {
+  	this.data = data;
+  }
+  [Symbol.iterator]() {
+  	let current = 0;
+  	let that = this;
+  	return {
+  	  next() {
+  	  	return current < that.data.length ?
+  	  	{value: that.data[current++], done: false} :
+  	  	{done: true};
+  	  }
+  	};
+  }
+}
+let itr1 = new MI(['one', 'tow', 'three']);
+for(let value of itr1) {
+  console.log(value);
+}
+
+
+
+
+
+
 
 
 
