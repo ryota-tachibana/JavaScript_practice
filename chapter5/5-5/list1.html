@@ -11,41 +11,117 @@ window.alert('書籍による練習です。');
 //5-30 class
 class Member {
   constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+  	this.firstName = firstName;
+  	this.lastName = lastName;
   }
-
   getName() {
-    return this.lastName + this.firstName;
+  	return this.firstName + this.lastName;
   }
 }
-let m = new Member('太郎', '山田');
+let m = new Member('太郎', '鈴木');
 console.log(m.getName());
+
 
 //5-31 class_prop
 class Member1 {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+  constructor (firstName, lastName) {
+  	this.firstName = firstName;
+  	this.lastName = lastName;
   }
   get firstName() {
-    return this._firstName;
+  	return this._firstName;
   }
   set firstName(value) {
     this._firstName = value;
   }
   get lastName() {
-    return this._lastName;
+  	return this._lastName;
   }
   set lastName(value) {
-    this._lastName = value;
+  	this._lastName = value;
   }
   getName() {
-    return this.lastName + this.firstName;
+	return this.lastName + this.firstName;
   }
 }
-let m1 = new Member1('太郎', '山田');
+let m1 = new Member1('一郎', '鈴木');
 console.log(m1.getName());
+
+//5-32 class_static
+class Area {
+  static getTriangle(base, height) {
+  	return base * height / 2;
+  }
+}
+console.log(Area.getTriangle(10, 5));
+
+//5-33 class_extends
+class Member2 {
+  constructor(firstName, lastName) {
+  	this.firstName = firstName;
+  	this.lastName = lastName;
+  }
+  getName() {
+  	return this.firstName + this.lastName;
+  }
+}
+class BusinessMember extends Member2 {
+  work() {
+  	return this.getName() + 'です'
+  }
+}
+let bm = new BusinessMember('太郎', '佐藤');
+console.log(bm.getName());
+console.log(bm.work());
+
+//5-34 class_super
+class Member3 {
+  constructor(firstName, lastName) {
+  	this.firstName = firstName;
+  	this.lastName = lastName;
+  }
+  getName() {
+  	return this.firstName + this.lastName;
+  }
+}
+class BM extends Member3 {
+  constructor(firstName, lastName, clazz) {
+  	super(firstName, lastName);
+  	this.clazz = clazz;
+  }
+  getName() {
+  	return super.getName() + ':' + this.clazz;
+  }
+}
+let bm1 = new BM('ケンタ', 'スズキ', '部長');
+console.log(bm1.getName());
+
+//5-35 literal_method
+let member = {
+  name: 'taro',
+  birth: new Date(1999, 1, 1),
+  toString() {
+  	return this.name + '/' + this.birth.toLocaleDateString()
+  }
+};
+console.log(member.toString());
+
+//5-36 literal_prop
+let name1 = 'taro';
+let birth1 = new Date(1999, 0, 1);
+let member1 = {name1, birth1};
+console.log(member1);
+
+//5-37 literal_compute
+let i = 0;
+let member4 = {
+  name: '山田太郎',
+  birth: new Date(1970, 5, 25),
+  ['memo' + ++i]: '正規会員', 
+  ['memo' + ++i]: '支部会長', 
+  ['memo' + ++i]: '関東'
+};
+console.log(member);
 
 
 </script>
