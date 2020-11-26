@@ -32,6 +32,16 @@ function btn_click() {
   window.alert('ボタンがクリックされました。');
 }
 
+//6-12 handle3
+window.onload = function() {
+  document.getElementById('btn').onclick = function() {
+    window.alert('ボタンがクリックされました。');
+  };
+};
 
-
-
+//6-13 handle4
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btn').addEventListener('click', function() {
+    window.alert('ボタンがクリックされました。');
+  }, false);
+}, false);
