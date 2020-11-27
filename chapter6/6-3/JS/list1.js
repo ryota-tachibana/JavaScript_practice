@@ -23,3 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(list.innerHTML);
   console.log(list.textContent);
 }, false);
+
+//6-17 text_ng
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btn').addEventListener('click', function() {
+    var name = document.getElementById('name');
+    var resultg = document.getElementById('result');
+    result.innerHTML = 'こんにちは、' + name.value + 'さん！';
+  }, false);
+}, false);
+
+
