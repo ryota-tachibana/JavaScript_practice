@@ -61,3 +61,18 @@ window.addEventListener('DOMContentLoaded', function() {
   }, true);
 });
 
+//6-28 file_image
+window.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("file").addEventListener('change', function(e) {
+    var input = document.getElementById("file").files[0];
+    var reader = new FileReader();
+    reader.addEventListener('load', function(e) {
+      document.getElementById("result3").src = reader.result;
+    }, true);
+    reader.readAsDataURL(input);
+  }, true);
+});
+
+
+
+
