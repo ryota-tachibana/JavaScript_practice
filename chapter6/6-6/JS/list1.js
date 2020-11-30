@@ -43,4 +43,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }, false);
 }, false);
 
+//6-39 class_list
+document.addEventListener('DOMContentLoaded', function() {
+  var elem4 = document.getElementById('elem4');
+    elem4.addEventListener('click', function() {
+    this.classList.toggle('highlight');
+  }, false);
+}, false);
+
+
+
+
 
