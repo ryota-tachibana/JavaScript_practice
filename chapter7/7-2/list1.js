@@ -1,3 +1,4 @@
+
 // 7-8 log
 console.log('ログ');
 console.info('情報');
