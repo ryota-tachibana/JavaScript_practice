@@ -39,3 +39,20 @@ MyStorage.prototype = {
     this.storage[this.app] = JSON.stringify(this.data);
   }
 };
+
+// 7-20 strage_call
+var storage = new MyStorage('JSSample');
+storage.setItem('hoge', 'ほげ');
+console.log(storage.getItem('hoge'));
+storage.save();
+
+// 7-21 strage_ev
+window.addEventListener('storage', function (e) {
+  console.log('変更されたキー：' + e.key);
+  console.log('変更前の値：' + e.oldValue);
+  console.log('変更後の値：' + e.newValue);
+  console.log('発生元ページ：' + e.url);
+}, false);
+
+
+
