@@ -80,7 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
     var origin = 'http://localhost';
     if (e.origin !== origin) { return; }
     document.getElementById('result1').textContent = e.data;
+  }, false);
+}, false);
+//7-30 cross_other
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('message', function(e) {
+    var origin = 'http://localhost';
+    if (e.origin !== origin) { return; }
+    document.getElementById('result2').textContent = e.data;
     var current = new Date();
     e.source.postMessage(current, origin);
+  }, false);
+}, false);
+//7-31 cross_other
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('message', function(e) {
+    var origin = 'http://localhost';
+    if (e.origin !== origin) { return; }
+console.log(e.data);
   }, false);
 }, false);
