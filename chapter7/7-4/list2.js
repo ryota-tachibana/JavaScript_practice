@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     xhr.send(null);
   }, false);
 }, false);
+
 //7-27 json
 document.getElementById('btn').addEventListener('click', function() {
   var url = 'http://test='
@@ -62,6 +63,7 @@ function show(data) {
     result.appendChild(ul);
   }
 } 
+
 //7-28 cross_main
 document.addEventListener('DOMContentLoaded', function() {
   var target = 'http://www.test';
@@ -74,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(e.data);
   }, false);
 }, false);
+
 //7-29 cross_other
 document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('message', function(e) {
@@ -82,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('result1').textContent = e.data;
   }, false);
 }, false);
+
 //7-30 cross_other
 document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('message', function(e) {
@@ -92,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     e.source.postMessage(current, origin);
   }, false);
 }, false);
+
 //7-31 cross_other
 document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('message', function(e) {
