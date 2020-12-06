@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript本格入門</title>
+</head>
+<body>
+<script type="text/javascript">
+window.alert('書籍による練習です。');
+//演算子　
+//2-17 increment
+var x = 3;
+var y = x++;
+console.log(x); //3
+console.log(y); //4
+var x = 3;
+var y = ++x
+console.log(x); //4
+console.log(y); //4
+
+//2-18 float
+console.log(0.2 * 3); //0.6000000000000001
+console.log(0.2 * 3 === 0.6); //false
+console.log(((0.2 * 10) * 3) / 10); //0.6
+console.log((0.2 * 10) * 3 === 0.6 * 10); //true
+
+//ト2-19 equal
+var x = 1;
+var y = x;
+x = 2;
+console.log(y); //1
+var data1 = [0,1,2];
+var data2 = data1;
+data1[0] = 5;
+console.log(data2); //[5,1,2]
+
+//2-20 dest
+let data20 = [56, 40, 32, 54, 24, 10];
+let [x0, x1, x2, x3, x4, x5] = data20;
+console.log(x0); //56
+console.log(x1); //40
+
+//2-21 dest_rest
+let data21 = [56, 40, 32, 54, 24, 10];
+let [xx0, xx1, xx2, xx3, ...other] = data21;
+console.log(xx0); //56
+console.log(other); //[24, 10]
+
+//2-23 dest_obj
+let book = {title: 'Javaポケットリファレンス', publish: '技術', price: 2680};
+let  {price, title, memo = 'なし' } = book;
+console.log(title); //Javaポケットリファレンス
+console.log(price); //2680
+console.log(memo); //なし
+
+//2-24 dest_obj2
+let book2 = { title2: 'Java', piblish2: '技術', price2: 200,
+  other2: { keyword: 'JavaScript', logo: 'jpg'} };
+let { title2, other2, other2: { keyword } } = book2;
+console.log(title2); //Java
+console.log(other2); //{ keyword: 'JavaScript', logo: 'jpg'}
+console.log(keyword); //JavaScript
+
+//2-25 dest_obj3
+let book3 = { title3: 'Java', publish3: '技術' };
+let { title3: name2, publish3: company2 } = book3;
+console.log(name2); //Java
+console.log(company2); //技術
+
+//2-26 equal_ref
+var data3 = ['JavaScript', 'Ajax', 'ASP.NET'];
+var data4 = ['JavaScript', 'Ajax', 'ASP.NET'];
+console.log(data3 == data4); //false
+
+//2-27 not_strict
+console.log('3.14E2' == 314); //true
+console.log('0x10' == 16); //true
+console.log('1' == 1); //true
+
+//2-28 strict
+console.log('3.14E2' === 314); //false
+console.log('0x10' === 16); //false
+console.log('1' === 1); //false
+
+//2-29 condition
+var x = 100
+console.log((x >= 80) ? '合格' : '不合格'); //合格
+
+//2-30 logical
+var x6 = 1;
+var y6 = 2;
+console.log(x6 === 1 && y6 === 1); //false
+console.log(x6 === 1 || y6 === 1); //true
+
+//2-31 logical2
+var a = 1;
+if (a === 1) { console.log('こんにちは'); }
+a ===1 && console.log('こんにちは');
+
+//2-32 shortcut
+var msg1 = '';
+msg1 = msg1 || 'こんにちは';
+console.log(msg1); //こんにちは
+
+
+//2-33 delete
+var ary = ['JavaScript', 'Ajax', 'ASP.NET'];
+console.log(delete ary[0]); //tuew
+console.log(ary); //[empty, "Ajax", "ASP.NET"]
+var obj01 = {x:1, y:2};
+console.log(delete obj01.x); //tue
+console.log(obj01.x); //undefind
+var obj02 = {x:obj01, y:2};
+console.log(delete obj02.x); //true
+console.log(obj01); //{y: 2}
+var data01 = 1;
+console.log(delete data01); //false
+console.log(data01); //1
+data02 = 10;
+
+//2-34 tyoeof
+var numb = 1;
+console.log(typeof numb);
+var stri = 'こんにちは' ;
+console.log(typeof stri);
+var flag = true;
+console.log(typeof flag);
+var aryy = ['JavaScript', 'Ajax', 'ASP.NET'];
+console.log(typeof aryr);
+var objc = {x8:1, y9:2};
+console.log(typeof objc);
+
+
+
+</script>
+<noscript>jabvaが利用できません</noscript>
+</body>
+</html>

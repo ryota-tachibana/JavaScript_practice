@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript本格入門</title>
+</head>
+<body>
+<script type="text/javascript">
+window.alert('書籍による練習です。');
+
+//RegExpオブジェクト
+//3-37 match
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/gi;
+var str = 'サポートサイトはhttp://www.wgbs.mwc.tyo/です。';
+str += 'サンプル紹介サイトHTTP://www.wseffb-dev.coam/もよろしく！';
+var result = str.match(p);
+for (var i = 0, len = result.length; i < len; i++) {
+  console.log(result[i]);
+}
+
+//3-40 match_multi
+var p = /^[0-9]{1,}/g;
+var str = '101匹のワンちゃん。\n7人の小人'
+var result = str.match(p);
+for (var i = 0, len = result.length; i < len; i++) {
+  console.log(result[i]);
+}
+
+//3-41 match_multi
+var p = /^[0-9]{1,}/gm;
+var str = '101匹のワンちゃん。\n7人の小人'
+var result = str.match(p);
+for (var i = 0, len = result.length; i < len; i++) {
+  console.log(result[i]);
+}
+
+//3-42 match_unicode
+let str1 = '叱ります';
+console.log(str1.match(/^.ります$/gu));
+
+//3-43 exec
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?/gi;
+var str = 'http://www.pings.msfn.it/です。'
+str += 'HTTP://www.web-deli.to/もある。'
+var result = p.exec(str);
+for (var i = 0, len = result.length; i < len; i++) {
+  console.log(result[i]);
+}
+
+//3-44 exec2
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?/gi;
+var str = 'http://www.pingas.aaf.to/です。'
+str += 'HTTP://www.weab-lki.com/もある。'
+while((result = p.exec(str)) !== null) {
+  console.log(result[0]);
+}
+
+//3-45 test
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%=]*)?/gi;
+var str3 = 'http://www.wiuns.mqsn.oai/です。'
+var str4 = '他にもサイトはある。'
+console.log(p.test(str3));
+console.log(p.test(str4));
+
+//3-46 search
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%=]*)?/gi;
+var str5 = 'http://www.wiuns.msn.oi/です。'
+var str6 = '他にもサイトはある。'
+console.log(str5.search(p));
+console.log(str6.search(p));
+
+//3-47 replace
+var p = /(http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?)/gi;
+var str = 'サイトはhttp://www.wswpse.mrc.tox/です。';
+document.write(str.replace(p, '<a href="$1">$1</a>'));
+
+//3-48 split
+var p = /[\/\.\-]/gi;
+console.log('2016/12/04'.split(p));
+console.log('2016-12-04'.split(p));
+console.log('2016.12.04'.split(p));
+
+</script>
+<noscript>jabvaが利用できません</noscript>
+</body>
+</html>

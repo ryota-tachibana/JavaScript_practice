@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript本格入門</title>
+</head>
+<body>
+<script type="text/javascript">
+window.alert('書籍による練習です。');
+//関数
+//4-48 tag_tagged
+function escapeHtml(str) {
+  if (!str) { return ''; }
+  str = str.replace(/&/g, '&amp;');
+  str = str.replace(/</g, '&lt;');
+  str = str.replace(/>/g, '&gt;');
+  str = str.replace(/"/g, '&quot;');
+  str = str.replace(/'/g, '&#39;');
+  return str;
+}
+function e(templates, ...values) {
+  let result = '';
+  for (let i = 0, len = templates.length; i < len; i++) {
+    result += templates[i] + escapeHtml(values[i]);
+  }
+  return result;
+}
+let name = '<"Mario" & \'Luigi\'>';
+console.log(e`こんにちは、${name}さん！`);
+
+//4-49 scope_chain
+var y = 'Global';
+function outer() {
+  var y = 'Local';
+  function inner() {
+    var Z = 'local'
+    console.log(Z);
+    console.log(y);
+  }
+  inner();
+}
+outer();
+
+//4-50 closure
+function closure(init) {
+  var counter = init;
+  return function() {
+    return ++counter;
+  }
+}
+var myClosure = closure(1)
+console.log(myClosure());
+console.log(myClosure());
+console.log(myClosure());
+
+//4-51 closure2
+function closure(init) {
+  var counter = init;
+  return function() {
+    return ++counter;
+  }
+}
+var myClosure1 = closure(1);
+var myClosure2 = closure(100);
+console.log(myClosure1());
+console.log(myClosure2());
+console.log(myClosure1());
+console.log(myClosure2());
+
+
+
+</script>
+<noscript>jabvaが利用できません</noscript>
+</body>
+</html>

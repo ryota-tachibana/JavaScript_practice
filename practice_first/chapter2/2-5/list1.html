@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript本格入門</title>
+</head>
+<body>
+<script type="text/javascript">
+window.alert('書籍による練習です。');
+//制御構文
+//2-37 if_else
+var x = 30;
+if (x >= 20) {
+  console.log('xは２０以上');
+} else if (x >= 10) {
+  console.log('xは１０以上');
+} else {
+  console.log('xは１０未満');
+} 
+
+//2-38 if_else_ng
+var x = 30;
+if (x >= 10) {
+ console.log('xは10以上です。');
+} else if (x >= 20) {
+ console.log('xは20以上です。');
+} else {
+ console.log('xは10未満です。');
+} 
+
+//2-39 if_else_ng
+var x = 30;
+if (x >= 10) {
+  if (x >= 20) {
+  	console.log('xは２０以上です');
+  } else {
+    console.log('xは１０以上２０未満');
+  }
+} else {
+  console.log('xは１０未満');
+} 
+
+//2-43 switch_pre
+var rank = 'B';
+if (rank === 'A') {
+  console.log('Aランクです。');
+} else if (rank === 'B') {
+  console.log('Bランクです。');
+} else if (rank === 'C') {
+  console.log('Cランクです。');
+} else {
+  console.log('ランク外です。');
+} 
+
+//2-44 switch
+var rank ='B';
+switch(rank) {
+  case 'A' :
+    console.log('Aランク');
+    break;
+  case 'B' :
+    console.log('Bランク');
+    break;
+  case 'C' :
+    console.log('Cランク');
+    break;
+  default :
+    console.log('ランクなし');
+    break;
+} 
+
+//2-45 switch_fall
+var rank = 'B';
+switch(rank) {
+  case 'A' :
+  case 'B' :
+  case 'C' :
+    console.log('合格');
+    break;
+  case 'D' :
+    console.log('不合格');
+    break;
+} 
+
+//2-47 while
+var x = 8;
+while(x < 10) {
+  console.log('xは' + x);
+  x++;
+} 
+
+//2-48 do
+var x = 8;
+do {
+  console.log('xは' + x);
+  x++;
+} while (x < 10);
+
+//2-49 for
+for (var x = 8; x < 10; x++) {
+  console.log('xは' + x);
+}
+
+//2-50 comma
+for (var i = 1, j = 1; i < 5; i++, j++) {
+  console.log(i,j)
+}
+
+//2-51 for_in
+var data = { apple:100, orange:150, banana:200 };
+for (var key in data) {
+  console.log(key + '=' + data[key]);
+}
+
+//2-52 for_array
+var data = [ 'apple', 'orange', 'banana' ];
+for (var key in data) {
+  console.log(data[key]);
+}
+
+//2-54 for_arrya_ok
+var data = ['apple','orange','banana'];
+for (var i = 0, len = data.length; i < len; i++) {
+  console.log(data[i]);
+}
+
+//2-55 forof
+var data = [ 'apple', 'orange', 'banana' ];
+Array.prototype.hoge = function () {}
+for (var value of data) {
+  console.log(value);
+}
+
+//2-56 break
+var result = 0;
+for (var i = 1; i <= 100; i++){
+  result += i;
+  if (result > 1000) {break;}
+}
+console.log('合計が1000を超えるのは'+i);
+
+//2-57 continue
+var result = 0;
+for (var i =1; i < 100; i++) {
+  if (i % 2 === 0) {continue;}
+  result += i;
+}
+console.log('合計'+result);
+
+//2-58 label_no
+for (var i = 1; i < 10; i++) {
+  for (var j = 1; j < 10; j++) {
+    var k = i * j
+    if (k > 30) { break; }
+    document.write(k + '&nbsp');
+  }
+  document.write('<br />');
+}
+
+//2-59 label
+kuku :
+for (var i = 1; i < 10; i++) {
+  for (var j = 1; j<10; j++) {
+  	var k = i * j 
+  	if (k >30) {break kuku;}
+  	document.write(k + '&nbsp');
+  }
+  document.write('<br />');
+}
+
+//2-60 try
+var i = 1
+try {
+  i = i * j;
+} catch(e) {
+  console.log(e.message);
+} finally {
+  console.log('処理は完了しました。');
+}
+
+// 2-61 throw
+var x = 1;
+var y = 0;
+try {
+  if (y === 0) {throw new Error('０で除算しようとしました');}
+  var z = x / y;
+} catch(e) {
+  console.log(e.message);
+}
+
+</script>
+<noscript>jabvaが利用できません</noscript>
+</body>
+</html>
+
+
+
+
+
+
+
+

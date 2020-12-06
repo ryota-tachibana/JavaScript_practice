@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript本格入門</title>
+</head>
+<body>
+<script type="text/javascript">
+window.alert('書籍による練習です。');
+//オブジェクト指向構文
+//5-39 main
+import { Member, Area } from './lib/Util';
+var m = new Member('太郎', '山田');
+console.log(m.getName());
+
+//5-40 main2
+import * as app from './lib/Util'
+var m = new app.Member('太郎', '山田');
+console.log(m.getName());
+
+//5-41 main3
+import { Member as MyMember, Area as MyArea } from './lib/Util'
+var m = new MyMember('太郎', '山田');
+console.log(m.getName());
+console.log(MyArea.getTriangle(10, 5));
+
+//5-43 main_default
+import Area from './lib/Area';
+console.log(Area.getTriangle(10, 5));
+
+//5-45 main_private
+import MyApp from './lib/MyApp';
+
+let app = new MyApp('secret string');
+for (let key in app) {
+  console.log(key);
+}
+console.log(JSON.stringify(app));
+console.log(app.checkValue('secret string'));
+
+
+
+
+
+</script>
+<noscript>jabvaが利用できません</noscript>
+</body>
+</html>

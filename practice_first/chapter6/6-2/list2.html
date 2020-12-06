@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript本格入門</title>
+</head>
+<body>
+<!--6-7 child_nodes -->
+<form>
+  <label for="food">好きな食べ物：</label>
+  <select id="food">
+    <option value="ラーメン">ラーメン</option>
+    <option value="餃子">餃子</option>
+    <option value="焼き肉">焼き肉</option>
+  </select>
+ <input type="submit" value="送信" />
+</form>
+<script src="JS/list2.js"></script>
+<!--6-8 first_child -->
+<form>
+  <label for="food">一番好きな食べ物は：</label>
+  <select id="food">
+    <option value="ラーメン">ラーメン</option>
+    <option value="餃子">餃子</option>
+    <option value="焼き肉">焼き肉</option>
+  </select>
+ <input type="submit" value="送信" />
+</form>
+<!--6-9 first_child_element -->
+<form>
+  <label for="food">一番好きな食べ物は？：</label>
+  <select id="food">
+    <option value="ラーメン">ラーメン</option>
+    <option value="餃子">餃子</option>
+    <option value="焼き肉">焼き肉</option>
+  </select>
+ <input type="submit" value="送信" />
+</form>
+<!--6-10 handle -->
+<input type="button" value="ダイアログ表示" onclick="btn_click()" />
+<!--6-11 handle2 -->
+<input type="button" value=" ダイアログ表示"
+  onclick="window.alert('ボタンがクリックされました。');" />
+<!--6-12 handle3 -->
+<input id="btn" type="button" value="ダイアログ表示" />
+<!--6-13 handle4 -->
+<input id="btn" type="button" value="ダイアログ表示" />
+
+</body>
+</html>
