@@ -1,5 +1,5 @@
 //5-38 lib/Util
-const AUTHOR = 'YAMADA, Yoshihiro';
+const AUTHOR = 'TARO, SUZUKI';
 export class Member {
   constructor(firstName, lastName) {
     this.firstName = firstName;
