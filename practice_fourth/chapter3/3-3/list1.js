@@ -1,0 +1,203 @@
+//3-16 aryya
+var ary1 = ['kato', 'kentaro', 'fujita', 'ken', 'Saito','tomo'];
+var ary2 = ['Yabuki', 'satomi', 'yamada', 'sota'];
+
+console.log(ary1.length);
+console.log(Array.isArray(ary1));
+console.log(ary1.toString());
+console.log(ary1.indexOf('Sato'));
+console.log(ary1.lastIndexOf('Sato'));
+console.log(ary1.concat(ary2));
+console.log(ary1.join('/'));
+console.log(ary1.slice(1));
+console.log(ary1.slice(1, 2));
+console.log(ary1.splice(1, 2, 'ryo', 'oyamada'));
+console.log(ary1);
+console.log(Array.of(20, 40,60));
+console.log(ary1.copyWithin(1, 3, 5));
+console.log(ary2.fill('aoki', 1, 3));
+console.log(ary1.pop());
+console.log(ary1.push('kasai'));
+console.log(ary1.shift());
+console.log(ary1.unshift('suziki', 'Kuge'));
+console.log(ary1.reverse());
+console.log(ary1.sort());
+
+//3-17 aryya_stack
+var data = [];
+
+data.push(1);
+data.push(2);
+data.push(3);
+
+console.log(data.pop());
+console.log(data.pop());
+console.log(data.pop());
+
+//3-18 aryya_queuq
+var data = [];
+
+data.push(1);
+data.push(2);
+data.push(3);
+
+console.log(data.shift());
+console.log(data.shift());
+console.log(data.shift());
+
+//3-19 aryya_splice
+var data = ['konno', 'mai', 'Ota', 'hiroshi', 'Sato'];
+
+console.log(data.splice(3, 2, 'hosoda', 'sato'));
+console.log(data.splice(3, 2));
+console.log(data.splice(1, 0, 'Tanaka'));
+
+//3-20 callback_foreach
+var data = [2, 3, 4, 5];
+
+data.forEach(function(value, index, array) {
+  console.log(value * value);
+});
+
+//3-21 callback_map
+var data = [2, 3, 4, 5];
+
+var result = data.map(function(value, index, array) {
+  return value * value;
+});
+
+console.log(result);
+
+//3-22 callback_some
+var data = [4, 9, 16, 25];
+
+var result = data.some(function(value, index, array) {
+  return value % 3 === 0;
+});
+
+if (result) {
+  console.log('3の倍数あり');
+} else {
+  console.log('3の倍数なし');
+}
+
+//3-23 callback_filter
+var data = [4, 9, 16, 25];
+
+var result = data.filter(function(value, index, array) {
+  return value % 2 === 1;
+});
+
+console.log(result);
+
+//3-24 sort
+var ary = [5, 25, 10];
+
+console.log(ary.sort());
+console.log(ary.sort(function(x, y) {
+  return x - y;
+}));
+
+//3-25 sort_clazz
+var classes = ['部長', '課長', '主任', '担当'];
+
+var members = [
+  { name: '名前一郎', clazz: '主任' },
+  { name: '名前二郎', clazz: '部長' },
+  { name: '名前三郎', clazz: '担当' },
+  { name: '名前四郎', clazz: '課長' },
+  { name: '名前五郎', clazz: '担当' },
+];
+
+console.log(members.sort(function(x, y) {
+  return classes.indexOf(x.clazz) - classes.indexOf(y.clazz);
+}))
+
+//3-26 map
+let m = new Map();
+
+m.set('dog', 'ワンワン');
+m.set('cat', 'ニャー');
+m.set('mouse', 'チュー');
+
+console.log(m.size);
+console.log(m.get('dog'));
+console.log(m.has('cat'));
+
+for (let key of m.keys()) {
+  console.log(key);
+}
+
+for (let value of m.values()) {
+  console.log(value);
+}
+
+for (let [key, value] of m ) {
+  console.log(value);
+}
+
+m.delete('dog');
+console.log(m.size);
+m.clear();
+console.log(m.size);
+
+//3-27 map_equal
+var m1 = new Map();
+
+m1.set('1', 'hoge');
+
+console.log(m1.get(1));
+
+//3-28 map_nan
+var m2 = new Map();
+
+m2.set(NaN, 'hoge');
+
+console.log(m2.get(NaN));
+
+//3-30 map_obj2
+var key = {};
+
+var m3 = new Map();
+
+m3.set(key, 'hoge');
+
+console.log(m3.get(key));
+
+//3-31 set
+let s = new Set();
+
+s.add(10);
+s.add(5);
+s.add(100);
+s.add(50);
+s.add(5);
+
+console.log(s.has(100));
+console.log(s.size);
+
+for (let val of s.values()) {
+  console.log(val);
+}
+
+for (let val of s) {
+  console.log(val);
+}
+
+s.delete(100);
+console.log(s.size);
+s.clear();
+console.log(s.size);
+
+//3-32 set2
+let s1 = new Set();
+
+s1.add(NaN);
+s1.add(NaN);
+
+console.log(s1.size);
+
+s1.add({});
+s1.add({});
+
+console.log(s1.size);
